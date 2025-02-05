@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_unsigned_int.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:10 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/03 20:32:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/05 10:19:29 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// calculate the length
 int	ft_unsigned_len(unsigned int nb)
 {
 	int	len;
@@ -25,6 +26,7 @@ int	ft_unsigned_len(unsigned int nb)
 	return (len);
 }
 
+// converts an unsigned integer to a string
 char	*ft_uitoa(unsigned int nb)
 {
 	char	*str;
@@ -44,6 +46,7 @@ char	*ft_uitoa(unsigned int nb)
 	return (str);
 }
 
+// prints an unsigned integer
 int	ft_putunsigned(unsigned int nb)
 {
 	int		char_printed;

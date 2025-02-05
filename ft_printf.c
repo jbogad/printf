@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/04 10:38:38 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/05 10:23:46 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h" 
 
+//character
 int	ft_putchar(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
+//string
 int	ft_putstr(char *str)
 {
 	int	i;
@@ -36,6 +38,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
+//conversion function
 int	ft_conversion(va_list vl, const char format)
 {
 	int	char_printed;
@@ -46,7 +49,7 @@ int	ft_conversion(va_list vl, const char format)
 	else if (format == 's')
 		char_printed += ft_putstr(va_arg(vl, char *));
 	else if (format == 'p')
-		char_printed += ft_putptr(va_arg(vl, uintptr_t));
+		char_printed += ft_putptr((unsigned long)va_arg(vl, void *));
 	else if (format == 'd' || format == 'i')
 		char_printed += ft_putnbr(va_arg(vl, int));
 	else if (format == 'u')
@@ -58,6 +61,7 @@ int	ft_conversion(va_list vl, const char format)
 	return (char_printed);
 }
 
+//main function
 int	ft_printf(const char *format, ...)
 {
 	int		i;

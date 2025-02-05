@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_int_decimal.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:31:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/03 20:31:59 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/05 10:13:40 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+// %d
+// convert (number) to char
 char	*ft_char(char *s, unsigned int number, int len)
 {
 	while (number > 0)
@@ -22,6 +23,7 @@ char	*ft_char(char *s, unsigned int number, int len)
 	return (s);
 }
 
+// calculate the number of digits (n)
 int	ft_len(int n)
 {
 	int	len;
@@ -37,6 +39,7 @@ int	ft_len(int n)
 	return (len);
 }
 
+// convert an integer to a string
 char	*ft_itoa(int n)
 {
 	char				*s;
@@ -64,6 +67,7 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
+//convert to string, print and then release
 int	ft_putnbr(int n)
 {
 	int		len;

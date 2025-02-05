@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_number_hex.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:00 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/03 20:32:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/05 10:22:30 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// calculate the length in digits
 int	hex_len(unsigned int num)
 {
 	int	len;
@@ -25,6 +26,7 @@ int	hex_len(unsigned int num)
 	return (len);
 }
 
+// print num in hexadecimal
 void	ft_put_hex(unsigned int num, const char format)
 {
 	if (num >= 16)
@@ -46,6 +48,7 @@ void	ft_put_hex(unsigned int num, const char format)
 	}
 }
 
+// Prints an integer in hexadecimal
 int	ft_puthex(unsigned int num, const char format)
 {
 	if (num == 0)
