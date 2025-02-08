@@ -1,32 +1,33 @@
 # ft_printf
 
-Este es un proyecto de la escuela 42 (42 Madrid) en el que se implementa una versión propia de la función `printf` de la librería estándar de C.
+This is a project from the 42 school (42 Madrid) in which a custom version of the printf function from the standard C library is implemented.
 
-## Descripción
+## Description
 
-El objetivo del proyecto es recrear el comportamiento de `printf` manejando múltiples especificadores de formato y asegurando la correcta impresión de los datos.
+The goal of the project is to recreate the behavior of printf by handling multiple format specifiers and ensuring the correct printing of data.
 
-## Funcionalidades
+## Functionalities
 
-La función `ft_printf` soporta los siguientes especificadores:
+The `ft_printf` function supports the following specifiers:
 
-- `%c` → Caracter
-- `%s` → Cadena de caracteres
-- `%p` → Puntero en formato hexadecimal
-- `%d` → Entero decimal con signo
-- `%i` → Entero decimal con signo
-- `%u` → Entero decimal sin signo
-- `%x` → Número en hexadecimal (minúsculas)
-- `%X` → Número en hexadecimal (mayúsculas)
-- `%%` → Imprime el símbolo `%`
+%c → Character
+%s → String of characters
+%p → Pointer in hexadecimal format
+%d → Signed decimal integer
+%i → Signed decimal integer
+%u → Unsigned decimal integer
+%x → Hexadecimal number (lowercase)
+%X → Hexadecimal number (uppercase)
+%% → Prints the percent symbol
+Usage in this format
 
-## Uso
+## Use
 
 ```c
 #include "ft_printf.h"
 
 int main(void) {
-    ft_printf("Hola, %s! Tienes %d mensajes.\n", "usuario", 5);
+    ft_printf("Hello, %s! You have %d messages.\n", "user", 5);
     return 0;
 }
 ```
