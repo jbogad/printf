@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:03 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/05 10:17:24 by jaboga-d         ###   ########.fr       */
+/*   Updated: 2025/02/08 11:34:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//count the digits of nb
-int	len_ptr(unsigned long nb)
+int	len_ptr(uintptr_t nb)
 {
 	int	len;
 
@@ -28,8 +27,7 @@ int	len_ptr(unsigned long nb)
 	return (len);
 }
 
-// print nb in hexadecimal format
-void	ft_put_ptr(unsigned long nb)
+void	ft_put_ptr(uintptr_t nb)
 {
 	if (nb >= 16)
 	{
@@ -45,8 +43,7 @@ void	ft_put_ptr(unsigned long nb)
 	}
 }
 
-// prints a pointer in 0x format
-int	ft_putptr(unsigned long ptr)
+int	ft_putptr(uintptr_t ptr)
 {
 	int	char_printed;
 

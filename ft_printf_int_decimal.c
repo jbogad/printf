@@ -3,77 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_int_decimal.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:31:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/05 10:13:40 by jaboga-d         ###   ########.fr       */
+/*   Updated: 2025/02/08 11:34:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-// %d
-// convert (number) to char
-char	*ft_char(char *s, unsigned int number, int len)
+
+size_t	get_size(int n)
 {
-	while (number > 0)
+	size_t	size;
+
+	if (n > 0)
+		size = 0;
+	else
+		size = 1;
+	while (n)
 	{
-		s[len--] = 48 + (number % 10);
-		number = number / 10;
+		n /= 10;
+		size++;
 	}
-	return (s);
+	return (size);
 }
 
-// calculate the number of digits (n)
-int	ft_len(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
-	{
-		len++;
-		n = n / 10;
-	}
-	return (len);
-}
-
-// convert an integer to a string
 char	*ft_itoa(int n)
 {
-	char				*s;
-	int					len;
-	unsigned int		number;
-	int					sign;
+	int		size;
+	char	*str;
+	long	num;
 
-	sign = 1;
-	len = ft_len(n);
-	s = (char *)malloc(sizeof(char) * (len + 1));
-	if (!(s))
+	size = get_size(n);
+	num = n;
+	str = (char *)malloc(size + 1);
+	if (!str)
 		return (NULL);
-	s[len--] = '\0';
-	if (n == 0)
-		s[0] = '0';
+	str[size] = '\0';
 	if (n < 0)
+		num = -num;
+	while (size > 0)
 	{
-		sign *= -1;
-		number = n * -1;
-		s[0] = '-';
+		str[--size] = num % 10 + '0';
+		num /= 10;
 	}
-	else
-		number = n;
-	s = ft_char(s, number, len);
-	return (s);
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }
 
-//convert to string, print and then release
 int	ft_putnbr(int n)
 {
-	int		len;
 	char	*num;
+	int		len;
 
 	num = ft_itoa(n);
+	if (!num)
+		return (0);
 	len = ft_putstr(num);
 	free(num);
 	return (len);
