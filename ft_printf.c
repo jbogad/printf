@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/08 11:37:21 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/12 11:10:57 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_conversion(va_list vl, const char str)
 	else if (str == 's')
 		char_printed += ft_putstr(va_arg(vl, char *));
 	else if (str == 'p')
-		char_printed += ft_putptr(va_arg(vl, uintptr_t));
+		char_printed += ft_putptr(va_arg(vl, unsigned long));
 	else if (str == 'd' || str == 'i')
 		char_printed += ft_putnbr(va_arg(vl, int));
 	else if (str == 'u')
@@ -88,8 +88,8 @@ int	ft_printf(const char *str, ...)
 // 	int i = 51;
 
 // 	ft_printf("%x\n", i);
-// 	// ft_printf("%X\n", i);
-// 	// printf("%x\n", i);
 // 	printf("%X\n", i);
 
 // }
+
+printf ("%d", d)

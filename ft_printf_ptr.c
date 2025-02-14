@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jaboga-d <jaboga-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:32:03 by marvin            #+#    #+#             */
-/*   Updated: 2025/02/08 11:34:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/02/09 09:52:10 by jaboga-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	len_ptr(uintptr_t nb)
+int	len_ptr(unsigned long nb)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int	len_ptr(uintptr_t nb)
 	return (len);
 }
 
-void	ft_put_ptr(uintptr_t nb)
+void	ft_put_ptr(unsigned long nb)
 {
 	if (nb >= 16)
 	{
@@ -43,7 +43,7 @@ void	ft_put_ptr(uintptr_t nb)
 	}
 }
 
-int	ft_putptr(uintptr_t ptr)
+int	ft_putptr(unsigned long ptr)
 {
 	int	char_printed;
 
